@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+#root{
+  display: flex;
+  gap: 20rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: greenyellow; */
+}
+h1{
+  color: blue;background-color: greenyellow;padding: 10px;
+}
+h2{
+  color: red;background-color: greenyellow;padding: 10px;
+}
+p{
+  color: blueviolet;background-color: greenyellow;padding: 10px;font-weight: 600;
+}
+ol{
+  /* list-style: none; */
+  background-color: greenyellow;
+  color: green;
+  padding: 10px;
+  margin-left: 10px;
+}
