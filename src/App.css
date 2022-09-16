@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -36,27 +41,151 @@
     transform: rotate(360deg);
   }
 }
-#root{
-  display: flex;
-  gap: 20rem;
+html{
+  background-color: pink;
+  place-items: center;
+}
+nav{
+  display: grid;
+  background-color: purple;
+  grid-template-columns: 15% 30% 50%;
+  column-gap: 10px;
+  /* columns: 20% 30% 50%; */
+  /* column-rule-color: red; */
+  column-fill: auto;
   align-items: center;
-  flex-wrap: wrap;
+  place-content: center;
+}
+.navHead{
+  color: white;
+  font-weight: 1000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* text-decoration: underline; */
+  margin:0 auto;
+  /* padding: 2px; */
+}
+.searchBar{
+  /* height: 20px; */
+  margin-bottom: 0 auto;
+  /* padding: 2px; */
+}
+.searBtn{
+  margin-left: 2px; 
+  height: 20px;
+  border-radius: 3px;
+}
+.navigationTools{
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  list-style: none;
   justify-content: center;
+  align-items: center;
+}
+/* .navigationTools li{ */
+  /* height: 50px; */
+  /* align-items: center; */
+/* } */
+.navigationTools li{
+  position: relative;
+}
+.navigationTools li a{
+  font-size: 20px;
+  text-decoration: none;
+  color: ghostwhite;
+  font-weight: 600;
+  /* background-size: 50px; */
+  /* padding:0 3px 0px 3px; */
+}
+
+.navigationTools li a::before{
+  content: '';
+  display: block;
+  height: 5px;
+  width: 0%;
+  background-color: violet;
+  bottom: 32.85px;
+  position: absolute;
+  transition: all ease-in-out 250ms;
+}
+.navigationTools li a:hover::before{
+  width: 100%;
+}
+.navigationTools li .navDrop{
+  display: none;
+  position: absolute;
+  list-style: none;
+  background-color: purple;
+  /* border: 2px purple; */
+  border-radius:0 0 5px 5px;
+}
+.navigationTools li:hover .navDrop{
+  display: block;
+  width: max-content;
+  margin: 0 0 10px 0;
+}
+.navDrop a{
+  color: white;
+}
+.navDrop li:hover{
+  background-color: violet;
+}
+.navDrop li a:hover::before{
+  width: 0;
+}
+.navDrop a:hover{
+  background-color: violet;
+  /* border-radius:0 0 5px 5px; */
+}
+.Input{
+  color: blue;
   /* background-color: greenyellow; */
-}
-h1{
-  color: blue;background-color: greenyellow;padding: 10px;
-}
-h2{
-  color: red;background-color: greenyellow;padding: 10px;
-}
-p{
-  color: blueviolet;background-color: greenyellow;padding: 10px;font-weight: 600;
-}
-ol{
-  /* list-style: none; */
-  background-color: greenyellow;
-  color: green;
   padding: 10px;
-  margin-left: 10px;
+  /* width: 500px; */
+  width: max-content;
+  background-color: greenyellow;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+.Form{
+  /* height: 300px; */
+  background-color: #61dafb;
+  border-radius: 15px;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
+form{
+  /* height: 300px; */
+  width: 500px;
+  /* align-items: center; */
+  justify-content: center;
+  background-color: #61dafb;
+  place-items: center;
+}
+input{
+  margin: 10px;
+  border: 0;
+  border-radius: 3px;
+  outline: none;
+  padding-left: 5px;
+  height: 30px;
+}
+button{
+  margin: 10px;
+  width: 3rem;
+  background-color: #282c34;
+  color: aliceblue;
+  border: none;
+  outline: none;
+}
+button:hover{
+  color: #282c34;
+  background-color: aliceblue;
+  box-shadow: 0 0 5px 0 aliceblue, 0 0 10px 0 aliceblue,0 0 20px 0 aliceblue,0 0 40px 0 aliceblue;
 }

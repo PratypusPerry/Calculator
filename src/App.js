@@ -3,8 +3,9 @@ import './App.css';
 import New from './any/New';
 import Chew from './any/Chew';
 
-function App() {
-  return(<><New/>
+const App=()=> {
+  return(<>
+    <New/>
   <Chew/>
   </>)
 }

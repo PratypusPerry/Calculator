@@ -1,19 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-const a='Pratyush Banerjee'
-const cd= new Date();
-// setInterval(cd,1000);
-const Few = () => {
-  return ([<h1><marquee>{`Hello myself ${a}!`}</marquee></h1>,<p>Hello Everyone!</p>,<h2>Come On</h2>,<ol><li>World is bad</li><li>World is not that good</li><li>Why is the world so bad?</li></ol>]);
-  // return(<><h1>{`My name is ${a}`}</h1><p>{`Today's date is ${cd.toLocaleDateString()} and the time is ${cd.toLocaleTimeString()}`}</p></>)
-}
-// const Chew=()=>{
-//   return(<React.Fragment>
-//   <h2>How You Doin'?</h2>
-//   <p>Whatever you doing man I think you should just go and fuck yourself</p>
-//   </React.Fragment>)
-// }
+import React,{useState} from 'react'
 
-export default Few
-// export default Chew;
-// export default Chew
+const New = () => {
+    const [search, setsearch] = useState("")
+  return (
+    <>
+        <nav>
+            <h1 className='navHead'>How You Doin'?</h1>
+            <div className='searchB'>
+            <input type='text' placeholder='Search Anything' className='searchBar' value={search} onChange={(e)=>{setsearch(e.target.value)}}></input>
+            <button className='searBtn'>Search</button>
+            </div>
+            <ul className='navigationTools'>
+                <li><a href='#'>Home</a></li>
+                <li className='mainComp'>
+                <a href='#'>About</a>
+                <ul className='navDrop'>
+                    <li><a href='#'>About Us</a></li>
+                    <li><a href='#'>Contact Us</a></li>
+                </ul>
+                </li>
+                <li className='mainComp'><a href='#'>Away</a></li>
+                <li className='mainComp'><a href='#'>Some</a></li>
+            </ul>
+        </nav>
+    </>
+  )
+}
+
+export default New
