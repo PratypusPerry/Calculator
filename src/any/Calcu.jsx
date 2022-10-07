@@ -29,12 +29,23 @@ const reducer=(state,{type,payload})=>{
             }   
             case Performs.chooseOperation:
                 if(state.currentTypes == null && state.previousTypes == null){
-                return (state)
-            }
+                    if(payload.operation=="÷" || payload.operation=="*")
+                    return (state)
+                    else
+                    return {
+                        ...state,
+                        currentTypes: `${state.currentTypes || ""}${payload.operation}`
+                    }
+                }
             if(state.currentTypes== null){
-                return{
+                if(payload.operation=="÷" || payload.operation=="*")
+                return {...state,
+                        operation:payload.operation
+                        }
+                else
+                return {
                     ...state,
-                    operation: payload.operation
+                    currentTypes: `${state.currentTypes || ""}${payload.operation}`
                 }
             }
                 if(state.previousTypes== null){
@@ -45,6 +56,8 @@ const reducer=(state,{type,payload})=>{
                         currentTypes: null,
                     }
                 }
+                
+            
                 // var result=eval(this.previousTypes+this.operation+this.currentTypes);
                 return {
                     ...state,
